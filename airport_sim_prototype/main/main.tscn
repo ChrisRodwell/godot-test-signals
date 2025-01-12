@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdaridcnmd3p0"]
+
+[ext_resource type="Script" path="res://main/camera_controller.gd" id="1_4jutf"]
+[ext_resource type="Script" path="res://main/main.gd" id="1_d3xqh"]
+[ext_resource type="PackedScene" uid="uid://j425j0ugm41b" path="res://world/world.tscn" id="3_iumaj"]
+[ext_resource type="PackedScene" uid="uid://du13l70ia4bpm" path="res://ui/ui.tscn" id="4_rv6q1"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_d3xqh")
+camera = NodePath("MainCamera")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+visible = false
+position = Vector2(960, 640)
+script = ExtResource("1_4jutf")
+
+[node name="World" parent="." instance=ExtResource("3_iumaj")]
+
+[node name="UI" parent="." instance=ExtResource("4_rv6q1")]

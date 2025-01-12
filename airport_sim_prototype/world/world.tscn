@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://j425j0ugm41b"]
+
+[ext_resource type="Script" path="res://world/world_manager.gd" id="1_ve21s"]
+[ext_resource type="Script" path="res://world/grid_layer/grid_layer.gd" id="2_erahj"]
+[ext_resource type="TileSet" uid="uid://in55y0e4tywj" path="res://world/terrain_layer/terrain_tileset.tres" id="3_kfga4"]
+[ext_resource type="Script" path="res://world/terrain_layer/terrain_layer.gd" id="4_m77i2"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ve21s")
+
+[node name="TerrainLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_kfga4")
+script = ExtResource("4_m77i2")
+
+[node name="GridLayer" type="Node2D" parent="."]
+script = ExtResource("2_erahj")
